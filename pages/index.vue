@@ -23,11 +23,11 @@
           </ul>
         </nav>
       </div>
-      <div class="level">
-        <div class="level-left">
-          <div class="level-item">
-            <div class="container">
-              <div class="PHOTO-PROFILE container is-one-quarter">
+      <div class="columns">
+        <div class="column is-half">
+          <div class="container columns mb-0">
+            <div class="column container pr-1">
+              <div class="PHOTO-PROFILE container">
                 <img
                   src="https://raw.githubusercontent.com/AmzyZy24/Item/master/no-icon.png"
                   alt=""
@@ -36,10 +36,42 @@
                 <div class="DOT-STATUS container"></div>
               </div>
             </div>
+            <div class="INFO column is-full pl-1">
+              <div class="is-size-5 has-text-weight-semibold px-1">
+                Jokowi
+              </div>
+              <div class="is-one-fifth is-size-7 has-text-weight-normal px-1">
+                Mitra level <span>2</span>
+              </div>
+              <div class="RATING is-size-7 px-1 has-text-weight-bold">
+                <b-rate
+                  v-model="rate"
+                  :icon-pack="packs"
+                  :icon="icons"
+                  :max="maxs"
+                  :size="sizes"
+                  :locale="locale"
+                  :show-score="score"
+                  :custom-text="custom"
+                  :rtl="isRtl"
+                  :spaced="isSpaced"
+                  :disabled="isDisabled"
+                  class="px-2"
+                >
+                </b-rate>
+              </div>
+              <div class="is-one-third is-size-7 px-1">
+                <span>15</span> Orderan sedang dibuat
+              </div>
+            </div>
           </div>
-          <div class="level-item"></div>
+          <div class="container">
+            <div class="title is-4 mx-2">
+              <strong>Saya akan membuatkan desain terbaik</strong>
+            </div>
+          </div>
         </div>
-        <div class="mt-3 level-right">
+        <div class="column is-half mt-3">
           <button class="BUTTON-CHATMITRA button has-text-centered box-radius">
             Chat Mitra
           </button>
@@ -52,7 +84,23 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      rate: 4.6,
+      maxs: 5,
+      sizes: 'is-small',
+      packs: 'mdi',
+      icons: 'star',
+      score: true,
+      custom: '',
+      isRtl: false,
+      isSpaced: false,
+      isDisabled: true,
+      locale: undefined, // Browser locale
+    }
+  },
+}
 </script>
 
 <style>
@@ -68,11 +116,11 @@ li {
 .BUTTON-CHATMITRA {
   border-radius: 0.4rem;
   border-color: #f79351;
-  padding: 0rem 13rem;
+  width: 100%;
 }
 .PHOTO-PROFILE {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2.7rem;
+  height: 2.7rem;
   border-color: #f79351;
   border-width: thin;
   border-style: solid;
@@ -87,4 +135,14 @@ li {
   bottom: 1px;
   right: 1px;
 }
+.INFO {
+  display: flex;
+}
+.RATING .rate {
+  border-left-style: solid;
+  border-right-style: solid;
+  border-color: hsl(0, 0%, 86%);
+  border-width: thin;
+}
+/* ------------------------------------ */
 </style>

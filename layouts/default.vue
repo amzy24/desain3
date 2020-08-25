@@ -25,7 +25,7 @@
             <div class="navbar-start">
               <b-field class="py-2 pl-4">
                 <b-input
-                  placeholder="Pencarian..."
+                  placeholder="Pencarian . . . "
                   type="search"
                   icon-right="magnify"
                   icon-right-clickable="search"
