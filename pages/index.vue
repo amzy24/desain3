@@ -63,6 +63,11 @@
               <div class="is-one-third is-size-7 px-1">
                 <span>15</span> Orderan sedang dibuat
               </div>
+              <div>
+                <h1>
+                  Mitra Kerja Bersama
+                </h1>
+              </div>
             </div>
           </div>
           <div class="container">
