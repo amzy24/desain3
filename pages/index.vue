@@ -100,19 +100,56 @@
           </div>
           <div class="DESKRIPSI container has-text-justified">
             akwodkaaowidosenofsjmdijrinaijenohdawi ijijn fqijnefi ijniwjbfijer i
-            hboijdngoqbreirjnoi qijbb ijqnoijnegi qijwnsbaijnfijn
-            qijnoauhbduofwr ijnuaabvijnq qihbauohdbfuhnqoi3 ijabduhbfoiq3jniljnq
-            qbodfiojqn4ij owkdoaw
+            hboijdngoqbreirjnoi doaibwfn pjepwfij qoiejofijqo iwehoiq joqijwof
+            oiejfqoiejofj qoiejfoiqj oiejfoijoiqjeofbo qoiejfobroqfj
+            oqoeijfoiqbokalidjbfle qefij lidjflqjenfl qijndljqn lfjnqjng
+            qinjelfqjenlkfj qijbb ijqnoijnegi qijwnsbaijnfijn qijnoauhbduofwr
+            ijnuaabvijnq qihbauohdbfuhnqoi3 ijabduhbfoiq3jniljnq qbodfiojqn4ij
+            owkdoaw
           </div>
         </div>
         <div class="PAKET column is-half pl-6">
           <div class="title is-5 has-text-weight-bold">
             Pilih harga paket
           </div>
-          <div class="HARGA-PAKET container"></div>
+          <div class="HARGA-PAKET container">
+            <b-tabs
+              type="is-toggle"
+              expanded
+              class="CONTENT-PAKET has-text-justified"
+            >
+              <b-tab-item label="Standar">
+                <p>
+                  amwdakwmonrof oaiwdoaiwo oidaoiwkd awid oaiwdoiakow oi
+                  oaiwdoiam woemf aoiwjdoiamwoi oaiwjdoaiwjodi
+                </p>
+                <button class="HARGA button is-small has-text-centered mt-5">
+                  <strong>Rp. 750.000</strong>
+                </button>
+              </b-tab-item>
+              <b-tab-item label="Medium">
+                <p>
+                  qomwfoo amwdia pwokdpaow mpoawkdpoanpfq apwmdoneofw wmeofkmwje
+                  oaiwodiawoid oamwdoanwdoanw
+                </p>
+                <button class="HARGA button is-small has-text-centered mt-5">
+                  <strong>Rp. 1.000.000</strong>
+                </button>
+              </b-tab-item>
+              <b-tab-item label="Premium">
+                <p>
+                  jenofwmeokfm aowidodaokwmdaoiwn awoimdpawpd awndoanow iawodin
+                  awoidajwoidja
+                </p>
+                <button class="HARGA button is-small has-text-centered mt-5">
+                  <strong>Rp. 2.000.000</strong>
+                </button>
+              </b-tab-item>
+            </b-tabs>
+          </div>
           <div class="container">
             <button
-              class="BUTTON-CHATMITRA button is-medium has-text-centered is-light"
+              class="BUTTON-CHATMITRA button is-medium has-text-centered is-light mt-4"
             >
               <strong>Chat Mitra</strong>
             </button>
@@ -122,6 +159,37 @@
       <!-- --------------------------------------- -->
       <div class="DETAIL-MITRA"></div>
       <!-- --------------------------------------- -->
+      <div class="PENILAIAN container mt-6">
+        <div class="container">
+          <div
+            class="TITLE-PENILAIAN container title is-5 has-text-weight-bold"
+          >
+            <p>550 Penilaian</p>
+            <b-rate
+              v-model="rate"
+              :icon-pack="packs"
+              :icon="icons"
+              :max="maxs"
+              :size="sizes"
+              :locale="locale"
+              :custom-text="custom"
+              :rtl="isRtl"
+              :spaced="isSpaced"
+              :disabled="isDisabled"
+              class="px-2 is-size-6"
+            >
+            </b-rate>
+          </div>
+        </div>
+        <div class="container">
+          <div class="columns">
+            <div class="column is-half">
+              <progress class="progress" value="15" max="100">15%</progress>
+            </div>
+            <div class="column is-half"></div>
+          </div>
+        </div>
+      </div>
     </section>
   </section>
 </template>
@@ -130,7 +198,7 @@
 export default {
   data() {
     return {
-      rate: 4.6,
+      rate: 4.9,
       maxs: 5,
       sizes: 'is-small',
       packs: 'mdi',
@@ -216,6 +284,30 @@ li {
   border-style: solid;
   border-width: thin;
   border-color: #f79351;
+}
+.CONTENT-PAKET,
+.CONTENT-PAKET li {
+  padding-bottom: none;
+  border: none;
+  margin: none;
+}
+.tabs.is-toggle a {
+  border-style: none;
+  background-color: lightgrey;
+}
+.tabs.is-toggle li.is-active a {
+  background-color: darkgrey;
+  border-color: darkgrey;
+  border-radius: 2px;
+  color: black;
+}
+.HARGA.button {
+  border-radius: 0.7rem;
+  background-color: #f79351;
+  width: 100%;
+}
+.TITLE-PENILAIAN {
+  display: flex;
 }
 /* ------------------------------------ */
 </style>
