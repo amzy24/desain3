@@ -184,7 +184,9 @@
         <div class="container">
           <div class="columns">
             <div class="column is-half">
-              <progress class="progress" value="15" max="100">15%</progress>
+              <progress class="progress is-small" value="15" max="100"
+                >15%</progress
+              >
             </div>
             <div class="column is-half"></div>
           </div>
