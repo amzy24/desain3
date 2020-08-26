@@ -78,7 +78,7 @@
         </div>
       </div>
       <div class="SLIDER">
-        <b-carousel :indicator-inside="false">
+        <b-carousel :indicator-inside="false" :autoplay="false">
           <b-carousel-item v-for="(item, i) in 3" :key="i">
             <span class="image">
               <img :src="getImgUrl(i)" />
@@ -162,7 +162,7 @@
       <div class="PENILAIAN container mt-6">
         <div class="container">
           <div
-            class="TITLE-PENILAIAN container title is-5 has-text-weight-bold"
+            class="TITLE-PENILAIAN container title is-5 has-text-weight-bold mb-4"
           >
             <p>550 Penilaian</p>
             <b-rate
@@ -183,12 +183,135 @@
         </div>
         <div class="container">
           <div class="columns">
-            <div class="column is-half">
-              <progress class="progress is-small" value="15" max="100"
-                >15%</progress
-              >
+            <div class="column">
+              <div class="columns">
+                <div class="column is-half">
+                  <div class="SET columns container is-vcentered">
+                    <div class="container column pr-1 pb-0">
+                      5 Ulasan
+                    </div>
+                    <div class="container column is-7 px-1 pb-0">
+                      <b-progress
+                        :type="type"
+                        size="is-small"
+                        :max="400"
+                        :value="indeterminate ? undefined : 350"
+                        :show-value="showValue"
+                        :format="format"
+                        :precision="precision"
+                        :keep-trailing-zeroes="keepTrailingZeroes"
+                        :locale="locale"
+                        class="BAR"
+                      ></b-progress>
+                    </div>
+                    <div class="container column px-1 pb-0">
+                      (350)
+                    </div>
+                  </div>
+                  <div class="SET columns container is-vcentered">
+                    <div class="container column pr-1 pb-0">
+                      5 Ulasan
+                    </div>
+                    <div class="container column is-7 px-1 pb-0">
+                      <b-progress
+                        :type="type"
+                        size="is-small"
+                        :max="400"
+                        :value="indeterminate ? undefined : 150"
+                        :show-value="showValue"
+                        :format="format"
+                        :precision="precision"
+                        :keep-trailing-zeroes="keepTrailingZeroes"
+                        :locale="locale"
+                        class="BAR"
+                      ></b-progress>
+                    </div>
+                    <div class="container column px-1 pb-0">
+                      (150)
+                    </div>
+                  </div>
+                  <div class="SET columns container is-vcentered">
+                    <div class="container column pr-1 pb-0">
+                      5 Ulasan
+                    </div>
+                    <div class="container column is-7 px-1 pb-0">
+                      <b-progress
+                        :type="type"
+                        size="is-small"
+                        :max="400"
+                        :value="indeterminate ? undefined : 30"
+                        :show-value="showValue"
+                        :format="format"
+                        :precision="precision"
+                        :keep-trailing-zeroes="keepTrailingZeroes"
+                        :locale="locale"
+                        class="BAR"
+                      ></b-progress>
+                    </div>
+                    <div class="container column px-1 pb-0">
+                      (30)
+                    </div>
+                  </div>
+                </div>
+                <div class="column is-half">
+                  <div class="SET columns container is-vcentered">
+                    <div class="container column pr-1 pb-0">
+                      5 Ulasan
+                    </div>
+                    <div class="container column is-7 px-1 pb-0">
+                      <b-progress
+                        :type="type"
+                        size="is-small"
+                        :max="400"
+                        :value="indeterminate ? undefined : 15"
+                        :show-value="showValue"
+                        :format="format"
+                        :precision="precision"
+                        :keep-trailing-zeroes="keepTrailingZeroes"
+                        :locale="locale"
+                        class="BAR"
+                      ></b-progress>
+                    </div>
+                    <div class="container column px-1 pb-0">
+                      (15)
+                    </div>
+                  </div>
+                  <div class="SET columns container is-vcentered">
+                    <div class="container column pr-1 pb-0">
+                      5 Ulasan
+                    </div>
+                    <div class="container column is-7 px-1 pb-0">
+                      <b-progress
+                        :type="type"
+                        size="is-small"
+                        :max="400"
+                        :value="indeterminate ? undefined : 5"
+                        :show-value="showValue"
+                        :format="format"
+                        :precision="precision"
+                        :keep-trailing-zeroes="keepTrailingZeroes"
+                        :locale="locale"
+                        class="BAR"
+                      ></b-progress>
+                    </div>
+                    <div class="container column px-1 pb-0">
+                      (5)
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="column is-half"></div>
+            <div class="column is-2 mt-6">
+              <div class="column">
+                <div class="container">
+                  <button
+                    class="URUTKAN button is-small has-text-centered mt-4 is-size-7"
+                  >
+                    Urutkan V
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -210,6 +333,17 @@ export default {
       isRtl: false,
       isSpaced: false,
       isDisabled: true,
+      locale: undefined, // Browser locale
+    }
+  },
+  data2() {
+    return {
+      indeterminate: false,
+      type: null,
+      showValue: true,
+      format: 'raw',
+      precision: 2,
+      keepTrailingZeroes: false,
       locale: undefined, // Browser locale
     }
   },
@@ -310,6 +444,14 @@ li {
 }
 .TITLE-PENILAIAN {
   display: flex;
+}
+.BAR {
+  width: 100%;
+}
+.URUTKAN.button {
+  border-radius: 0.7rem;
+  background-color: #f79351;
+  width: 100%;
 }
 /* ------------------------------------ */
 </style>
