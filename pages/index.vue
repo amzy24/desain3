@@ -487,11 +487,16 @@
         <div class="title is-6 has-text-weight-bold mx-5">
           Rekomendasi lain
         </div>
-        <div class="container">
-          <b-carousel-list v-model="test" :data="items" :items-to-show="4">
+        <div class="container mx-2">
+          <b-carousel-list
+            data="data3"
+            v-model="test"
+            :data3="items"
+            :items-to-show="4"
+          >
             <template slot="item" slot-scope="list">
-              <figure class="image is-5by4">
-                <a @click="info(list.index)"><img :src="list.image" /></a>
+              <figure class="RECOM-IMAGE image is-5by4 mx-2">
+                <a><img :src="list.image" /></a>
               </figure>
             </template>
           </b-carousel-list>
@@ -541,17 +546,14 @@ export default {
         {
           title: 'Slide 1',
           image: 'https://buefy.org/static/img/placeholder-1280x960.png',
-          rating: 4.4,
         },
         {
           title: 'Slide 2',
           image: 'https://buefy.org/static/img/placeholder-1280x960.png',
-          rating: 3.5,
         },
         {
           title: 'Slide 3',
           image: 'https://buefy.org/static/img/placeholder-1280x960.png',
-          rating: 5,
         },
         {
           title: 'Slide 4',
@@ -560,22 +562,18 @@ export default {
         {
           title: 'Slide 5',
           image: 'https://buefy.org/static/img/placeholder-1280x960.png',
-          rating: 5,
         },
         {
           title: 'Slide 6',
           image: 'https://buefy.org/static/img/placeholder-1280x960.png',
-          rating: 4,
         },
         {
           title: 'Slide 7',
           image: 'https://buefy.org/static/img/placeholder-1280x960.png',
-          rating: 2.7,
         },
         {
           title: 'Slide 8',
           image: 'https://buefy.org/static/img/placeholder-1280x960.png',
-          rating: 1.5,
         },
       ],
     }
@@ -695,6 +693,11 @@ li {
   border-left-style: solid;
   border-right-style: solid;
   border-color: hsl(0, 0%, 86%);
+  border-width: thin;
+}
+.RECOM-IMAGE img {
+  border-radius: 1rem;
+  border-style: solid;
   border-width: thin;
 }
 /* ------------------------------------ */
