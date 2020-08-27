@@ -55,6 +55,7 @@ export default {
     'nuxt-buefy',
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    // '@nuxtjs/eslint-module' :: bypass this module
   ],
   /*
    ** Axios module configuration
