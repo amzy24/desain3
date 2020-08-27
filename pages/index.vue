@@ -160,11 +160,10 @@
       <div class="DETAIL-MITRA">
         <div class="container">
           <div class="ABOUT-MITRA">
-            <H1>MAKE IT BETTER</H1>
-            <div class="card">
+            <div class="card-mitra">
               <div class="container columns">
-                <div class="column-image pr-1">
-                  <div class="PHOTO-PROFILE container">
+                <div class="column-image is-5 pr-2">
+                  <div class="PHOTO-PROFILE2 container">
                     <img
                       src="https://raw.githubusercontent.com/AmzyZy24/Item/master/no-icon.png"
                       alt
@@ -173,29 +172,56 @@
                     <div class="DOT-STATUS container"></div>
                   </div>
                 </div>
-                <div class="column-rate pr-1">
-                  <p>Jokowi <span> | </span> Semarang</p>
-                  <div><p>Rating dari mitra</p></div>
-                  <p>Pelayanan Baik</p>
+                <div class="column-rate pr-2">
+                  <p>
+                    <strong>John Smith</strong> <span> | </span
+                    ><small>@johnsmith</small>
+                  </p>
+                  <div class="RATE column-rate2 is-full pl-1">
+                    <div class="RATING-2 is-size-7 px-1 has-text-weight-bold">
+                      <b-rate
+                        v-model="rate"
+                        :icon-pack="packs"
+                        :icon="icons"
+                        :max="maxs"
+                        :size="sizes"
+                        :locale="locale"
+                        :show-score="score"
+                        :custom-text="custom"
+                        :rtl="isRtl"
+                        :spaced="isSpaced"
+                        :disabled="isDisabled"
+                        class="px-2"
+                      ></b-rate>
+                    </div>
+                    <div class="column is-half is-size-7 px-1">
+                      (1000) Komentar
+                    </div>
+                  </div>
+                  <p>Mitra Level 2</p>
                 </div>
-                <div class="column-join pr-1">
-                  <p>Gabung</p>
-                  <p>Tahun</p>
+                <div class="column-join pr-2">
+                  <p><strong>Gabung</strong></p>
+                  <p><small>2020</small></p>
                 </div>
-                <div class="column-chat pr-1">
-                  <p>Balasan Chat</p>
-                  <p>Notifikasi</p>
+                <div class="column-chat pr-2">
+                  <p><strong>Balasan Chat</strong></p>
+                  <p><small>1 Hari lalu</small></p>
                 </div>
-                <div class="column-send pr-1">
-                  <p>Pengiriman Terakhir</p>
-                  <p>Durasi</p>
+                <div class="column-send pr-2">
+                  <p><strong>Pengiriman Terakhir</strong></p>
+                  <p><small>4 Hari lalu</small></p>
                 </div>
               </div>
-              <div class="column-komen">
-                <article>
-                  apa yang dilakukan orang lain kemudian apa yang kita lakukan
-                  terhadap mereka mereka kemudian bertemu dan saling menyalahkan
-                </article>
+              <div class="column">
+                <div class="column-komen">
+                  <article>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Proin ornare magna eros, eu pellentesque tortor vestibulum
+                    ut. Maecenas non massa sem. Etiam finibus odio quis feugiat
+                    facilisis.
+                  </article>
+                </div>
               </div>
             </div>
           </div>
@@ -700,5 +726,29 @@ li {
   border-style: solid;
   border-width: thin;
 }
+.card-mitra {
+  background-color: whitesmoke;
+}
+.RATE {
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+}
+.PHOTO-PROFILE2 {
+  width: 96px;
+  height: 96px;
+  border-color: #f79351;
+  border-width: thin;
+  border-style: solid;
+  border-radius: 290486px;
+}
+.px-2 {
+  padding-left: 0rem !important;
+  padding-right: 0.5rem !important;
+}
+.pl-1 {
+  padding-left: 0rem !important;
+}
+
 /* ------------------------------------ */
 </style>
