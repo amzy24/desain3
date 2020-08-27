@@ -495,7 +495,7 @@
             :items-to-show="4"
           >
             <template slot="item" slot-scope="list">
-              <figure class="RECOM-IMAGE image is-5by4 mx-2">
+              <figure class="RECOM-IMAGE image is-4by3 mx-2">
                 <a><img :src="list.image" /></a>
               </figure>
             </template>
