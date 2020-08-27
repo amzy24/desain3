@@ -181,7 +181,7 @@
             </b-rate>
           </div>
         </div>
-        <div class="container">
+        <div class="container mb-4">
           <div class="columns">
             <div class="column">
               <div class="columns">
@@ -314,7 +314,7 @@
             </div>
           </div>
         </div>
-        <div class="container"></div>
+        <div class="CARD-MITRA container pt-2"></div>
       </div>
     </section>
   </section>
@@ -453,6 +453,11 @@ li {
   border-radius: 0.7rem;
   background-color: #f79351;
   width: 100%;
+}
+.CARD-MITRA {
+  border-top-style: ridge;
+  border-color: hsl(0, 0%, 86%);
+  border-width: thin;
 }
 /* ------------------------------------ */
 </style>
