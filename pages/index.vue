@@ -357,7 +357,145 @@
             </div>
           </div>
         </div>
-        <div class="CARD-MITRA container pt-2"></div>
+        <div class="CARD-MITRA container pt-4 pb-5">
+          <div>
+            <div class="container columns mb-0 is-vcentered">
+              <div class="column container pr-1">
+                <div class="PHOTO-PROFILE container">
+                  <img
+                    src="https://raw.githubusercontent.com/AmzyZy24/Item/master/no-icon.png"
+                    alt=""
+                    width="100%"
+                  />
+                </div>
+              </div>
+              <div class="CARD-INFO column is-full pl-1">
+                <div class="is-size-5 has-text-weight-semibold px-3">
+                  Angga
+                </div>
+                <div
+                  class="CARD-CITY is-one-fifth is-size-7 has-text-weight-normal px-3"
+                >
+                  Semarang
+                </div>
+                <div class="CARD-RATING is-size-7 px-3 has-text-weight-bold">
+                  <b-rate
+                    v-model="rate"
+                    :icon-pack="packs"
+                    :icon="icons"
+                    max="1"
+                    :size="sizes"
+                    :locale="locale"
+                    :show-score="score"
+                    :custom-text="custom"
+                    :rtl="isRtl"
+                    :spaced="isSpaced"
+                    :disabled="isDisabled"
+                  >
+                  </b-rate>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <article class="media">
+              <figure class="media-left px-2">
+                <p class="image is-64x64">
+                  <img src="https://bulma.io/images/placeholders/128x128.png" />
+                </p>
+              </figure>
+              <div class="media-content">
+                <div class="content">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Proin ornare magna eros, eu pellentesque tortor vestibulum
+                    ut. Maecenas non massa sem. Etiam finibus odio quis feugiat
+                    facilisis awodkapwogpjow apwokd apownrpa siondpia wpomap
+                    owndpawmpoandpam wpodm.
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="CARD-MITRA container pt-4 pb-5">
+          <div>
+            <div class="container columns mb-0 is-vcentered">
+              <div class="column container pr-1">
+                <div class="PHOTO-PROFILE container">
+                  <img
+                    src="https://raw.githubusercontent.com/AmzyZy24/Item/master/no-icon.png"
+                    alt=""
+                    width="100%"
+                  />
+                </div>
+              </div>
+              <div class="CARD-INFO column is-full pl-1">
+                <div class="is-size-5 has-text-weight-semibold px-3">
+                  Ratna
+                </div>
+                <div
+                  class="CARD-CITY is-one-fifth is-size-7 has-text-weight-normal px-3"
+                >
+                  Semarang
+                </div>
+                <div class="CARD-RATING is-size-7 px-3 has-text-weight-bold">
+                  <b-rate
+                    v-model="rate"
+                    :icon-pack="packs"
+                    :icon="icons"
+                    max="1"
+                    :size="sizes"
+                    :locale="locale"
+                    :show-score="score"
+                    :custom-text="custom"
+                    :rtl="isRtl"
+                    :spaced="isSpaced"
+                    :disabled="isDisabled"
+                  >
+                  </b-rate>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <article class="media">
+              <figure class="media-left px-2">
+                <p class="image is-64x64">
+                  <img src="https://bulma.io/images/placeholders/128x128.png" />
+                </p>
+              </figure>
+              <div class="media-content">
+                <div class="content">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Proin ornare magna eros, eu pellentesque tortor vestibulum
+                    ut. Maecenas non massa sem. Etiam finibus odio quis feugiat
+                    facilisis awodkapwogpjow apwokd apownrpa siondpia wpomap
+                    owndpawmpoandpam wpodm.
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="button is-small is-fullwidth mx-2">
+          <strong>Lihat lebih banyak V</strong>
+        </div>
+      </div>
+      <div class="CAROUSEL-LIST container mt-4">
+        <div class="title is-6 has-text-weight-bold mx-5">
+          Rekomendasi lain
+        </div>
+        <div class="container">
+          <b-carousel-list v-model="test" :data="items" :items-to-show="4">
+            <template slot="item" slot-scope="list">
+              <figure class="image is-5by4">
+                <a @click="info(list.index)"><img :src="list.image" /></a>
+              </figure>
+            </template>
+          </b-carousel-list>
+        </div>
       </div>
     </section>
   </section>
@@ -395,6 +533,52 @@ export default {
     getImgUrl(value) {
       return `https://picsum.photos/id/43${value}/1230/500`
     },
+  },
+  data3() {
+    return {
+      test: 0,
+      items: [
+        {
+          title: 'Slide 1',
+          image: 'https://buefy.org/static/img/placeholder-1280x960.png',
+          rating: 4.4,
+        },
+        {
+          title: 'Slide 2',
+          image: 'https://buefy.org/static/img/placeholder-1280x960.png',
+          rating: 3.5,
+        },
+        {
+          title: 'Slide 3',
+          image: 'https://buefy.org/static/img/placeholder-1280x960.png',
+          rating: 5,
+        },
+        {
+          title: 'Slide 4',
+          image: 'https://buefy.org/static/img/placeholder-1280x960.png',
+        },
+        {
+          title: 'Slide 5',
+          image: 'https://buefy.org/static/img/placeholder-1280x960.png',
+          rating: 5,
+        },
+        {
+          title: 'Slide 6',
+          image: 'https://buefy.org/static/img/placeholder-1280x960.png',
+          rating: 4,
+        },
+        {
+          title: 'Slide 7',
+          image: 'https://buefy.org/static/img/placeholder-1280x960.png',
+          rating: 2.7,
+        },
+        {
+          title: 'Slide 8',
+          image: 'https://buefy.org/static/img/placeholder-1280x960.png',
+          rating: 1.5,
+        },
+      ],
+    }
   },
 }
 </script>
@@ -499,6 +683,17 @@ li {
 }
 .CARD-MITRA {
   border-top-style: ridge;
+  border-color: hsl(0, 0%, 86%);
+  border-width: thin;
+}
+.CARD-INFO {
+  display: flex;
+  justify-content: start;
+  align-items: baseline;
+}
+.CARD-CITY {
+  border-left-style: solid;
+  border-right-style: solid;
   border-color: hsl(0, 0%, 86%);
   border-width: thin;
 }
