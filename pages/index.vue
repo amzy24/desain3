@@ -160,6 +160,7 @@
       <div class="DETAIL-MITRA">
         <div class="container">
           <div class="ABOUT-MITRA">
+            <H1>MAKE IT BETTER</H1>
             <div class="card">
               <div class="container columns">
                 <div class="column-image pr-1">
