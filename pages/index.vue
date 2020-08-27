@@ -157,7 +157,49 @@
         </div>
       </div>
       <!-- --------------------------------------- -->
-      <div class="DETAIL-MITRA"></div>
+      <div class="DETAIL-MITRA">
+        <div class="container">
+          <div class="ABOUT-MITRA">
+            <div class="card">
+              <div class="container columns">
+                <div class="column-image pr-1">
+                  <div class="PHOTO-PROFILE container">
+                    <img
+                      src="https://raw.githubusercontent.com/AmzyZy24/Item/master/no-icon.png"
+                      alt
+                      width="100%"
+                    />
+                    <div class="DOT-STATUS container"></div>
+                  </div>
+                </div>
+                <div class="column-rate pr-1">
+                  <p>Jokowi <span> | </span> Semarang</p>
+                  <div><p>Rating dari mitra</p></div>
+                  <p>Pelayanan Baik</p>
+                </div>
+                <div class="column-join pr-1">
+                  <p>Gabung</p>
+                  <p>Tahun</p>
+                </div>
+                <div class="column-chat pr-1">
+                  <p>Balasan Chat</p>
+                  <p>Notifikasi</p>
+                </div>
+                <div class="column-send pr-1">
+                  <p>Pengiriman Terakhir</p>
+                  <p>Durasi</p>
+                </div>
+              </div>
+              <div class="column-komen">
+                <article>
+                  apa yang dilakukan orang lain kemudian apa yang kita lakukan
+                  terhadap mereka mereka kemudian bertemu dan saling menyalahkan
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <!-- --------------------------------------- -->
       <div class="PENILAIAN container mt-6">
         <div class="container">
