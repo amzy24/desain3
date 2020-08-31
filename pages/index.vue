@@ -3,7 +3,7 @@
     <section class="MAIN-TOP section pt-5 pb-6 px-3 mx-6">
       <div class="container">
         <nav
-          class="breadcrumb has-arrow-separator mb-3"
+          class="breadcrumb has-arrow-separator mb-3 is-hidden-mobile"
           aria-label="breadcrumbs"
         >
           <ul>
@@ -25,7 +25,7 @@
       </div>
       <div class="columns is-vcentered">
         <div class="column is-half">
-          <div class="container columns mb-0">
+          <div class="container columns mb-0 is-mobile">
             <div class="column container pr-1">
               <div class="PHOTO-PROFILE container">
                 <img
@@ -72,7 +72,7 @@
           </div>
         </div>
         <div class="column is-half mt-3">
-          <button class="BUTTON-CHATMITRA button is-large has-text-centered">
+          <button class="BUTTON-CHATMITRA button is-medium has-text-centered">
             Chat Mitra
           </button>
         </div>
@@ -93,14 +93,14 @@
       </div>
     </section>
     <section class="MAIN-BOTTOM section pt-5 pb-6 px-3 mx-6">
-      <div class="columns">
+      <div class="columns mb-5">
         <div class="column is-half pr-6">
           <div class="title is-5 has-text-weight-bold">
             Deskripsi mitra
           </div>
           <div class="DESKRIPSI container has-text-justified">
-            akwodkaaowidosenofsjmdijrinaijenohdawi ijijn fqijnefi ijniwjbfijer i
-            hboijdngoqbreirjnoi doaibwfn pjepwfij qoiejofijqo iwehoiq joqijwof
+            akwodkaaowidosen ofsjmdijrinaijenohdawi ijijn fqijnefi ijniwjbfijer
+            i hboijdngoqbreirjnoi doaibwfn pjepwfij qoiejofijqo iwehoiq joqijwof
             oiejfqoiejofj qoiejfoiqj oiejfoijoiqjeofbo qoiejfobroqfj
             oqoeijfoiqbokalidjbfle qefij lidjflqjenfl qijndljqn lfjnqjng
             qinjelfqjenlkfj qijbb ijqnoijnegi qijwnsbaijnfijn qijnoauhbduofwr
@@ -114,37 +114,27 @@
           </div>
           <div class="HARGA-PAKET container">
             <b-tabs
+              v-model="activeTab"
               type="is-toggle"
               expanded
+              :multiline="multiline"
               class="CONTENT-PAKET has-text-justified"
             >
-              <b-tab-item label="Standar">
-                <p>
-                  amwdakwmonrof oaiwdoaiwo oidaoiwkd awid oaiwdoiakow oi
-                  oaiwdoiam woemf aoiwjdoiamwoi oaiwjdoaiwjodi
-                </p>
-                <button class="HARGA button is-small has-text-centered mt-5">
-                  <strong>Rp. 750.000</strong>
-                </button>
-              </b-tab-item>
-              <b-tab-item label="Medium">
-                <p>
-                  qomwfoo amwdia pwokdpaow mpoawkdpoanpfq apwmdoneofw wmeofkmwje
-                  oaiwodiawoid oamwdoanwdoanw
-                </p>
-                <button class="HARGA button is-small has-text-centered mt-5">
-                  <strong>Rp. 1.000.000</strong>
-                </button>
-              </b-tab-item>
-              <b-tab-item label="Premium">
-                <p>
-                  jenofwmeokfm aowidodaokwmdaoiwn awoimdpawpd awndoanow iawodin
-                  awoidajwoidja
-                </p>
-                <button class="HARGA button is-small has-text-centered mt-5">
-                  <strong>Rp. 2.000.000</strong>
-                </button>
-              </b-tab-item>
+              <template v-for="tab in tabs">
+                <b-tab-item
+                  v-if="tab.displayed"
+                  :key="tab.id"
+                  :value="tab.id"
+                  :label="tab.label"
+                >
+                  <p>
+                    {{ tab.content }}
+                  </p>
+                  <button class="HARGA button is-small has-text-centered mt-5">
+                    <strong>{{ tab.button }}</strong>
+                  </button>
+                </b-tab-item>
+              </template>
             </b-tabs>
           </div>
           <div class="container">
@@ -158,26 +148,26 @@
       </div>
       <!-- --------------------------------------- -->
       <div class="DETAIL-MITRA">
-        <div class="container">
+        <div class="container pt-5">
           <div class="ABOUT-MITRA">
-            <div class="card-mitra">
+            <div class="card">
               <div class="container columns">
-                <div class="column-image is-5 pr-2">
+                <div class="column is-2 pr-2">
                   <div class="PHOTO-PROFILE2 container">
                     <img
                       src="https://raw.githubusercontent.com/AmzyZy24/Item/master/no-icon.png"
                       alt
                       width="100%"
                     />
-                    <div class="DOT-STATUS container"></div>
+                    <div class="DOT-STATUS-2 container"></div>
                   </div>
                 </div>
-                <div class="column-rate pr-2">
+                <div class="column is-one-quarter pr-2">
                   <p>
                     <strong>John Smith</strong> <span> | </span
                     ><small>@johnsmith</small>
                   </p>
-                  <div class="RATE column-rate2 is-full pl-1">
+                  <div class="RATE column is-full pl-1 py-0">
                     <div class="RATING-2 is-size-7 px-1 has-text-weight-bold">
                       <b-rate
                         v-model="rate"
@@ -200,21 +190,21 @@
                   </div>
                   <p>Mitra Level 2</p>
                 </div>
-                <div class="column-join pr-2">
+                <div class="column pr-2">
                   <p><strong>Gabung</strong></p>
                   <p><small>2020</small></p>
                 </div>
-                <div class="column-chat pr-2">
+                <div class="column pr-2">
                   <p><strong>Balasan Chat</strong></p>
                   <p><small>1 Hari lalu</small></p>
                 </div>
-                <div class="column-send pr-2">
+                <div class="column pr-2">
                   <p><strong>Pengiriman Terakhir</strong></p>
                   <p><small>4 Hari lalu</small></p>
                 </div>
               </div>
-              <div class="column">
-                <div class="column-komen">
+              <div class="KOMENTAR column px-2 py-0">
+                <div class="column">
                   <article>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Proin ornare magna eros, eu pellentesque tortor vestibulum
@@ -233,7 +223,7 @@
           <div
             class="TITLE-PENILAIAN container title is-5 has-text-weight-bold mb-4"
           >
-            <p>550 Penilaian</p>
+            <p class="pr-4">550 Penilaian</p>
             <b-rate
               v-model="rate"
               :icon-pack="packs"
@@ -261,7 +251,7 @@
                     </div>
                     <div class="container column is-7 px-1 pb-0">
                       <b-progress
-                        :type="type"
+                        type="is-halo"
                         size="is-small"
                         :max="400"
                         :value="indeterminate ? undefined : 350"
@@ -279,11 +269,11 @@
                   </div>
                   <div class="SET columns container is-vcentered">
                     <div class="container column pr-1 pb-0">
-                      5 Ulasan
+                      4 Ulasan
                     </div>
                     <div class="container column is-7 px-1 pb-0">
                       <b-progress
-                        :type="type"
+                        type="is-halo"
                         size="is-small"
                         :max="400"
                         :value="indeterminate ? undefined : 150"
@@ -301,11 +291,11 @@
                   </div>
                   <div class="SET columns container is-vcentered">
                     <div class="container column pr-1 pb-0">
-                      5 Ulasan
+                      3 Ulasan
                     </div>
                     <div class="container column is-7 px-1 pb-0">
                       <b-progress
-                        :type="type"
+                        type="is-halo"
                         size="is-small"
                         :max="400"
                         :value="indeterminate ? undefined : 30"
@@ -325,11 +315,11 @@
                 <div class="column is-half">
                   <div class="SET columns container is-vcentered">
                     <div class="container column pr-1 pb-0">
-                      5 Ulasan
+                      2 Ulasan
                     </div>
                     <div class="container column is-7 px-1 pb-0">
                       <b-progress
-                        :type="type"
+                        type="is-halo"
                         size="is-small"
                         :max="400"
                         :value="indeterminate ? undefined : 15"
@@ -347,11 +337,11 @@
                   </div>
                   <div class="SET columns container is-vcentered">
                     <div class="container column pr-1 pb-0">
-                      5 Ulasan
+                      1 Ulasan
                     </div>
                     <div class="container column is-7 px-1 pb-0">
                       <b-progress
-                        :type="type"
+                        type="is-halo"
                         size="is-small"
                         :max="400"
                         :value="indeterminate ? undefined : 5"
@@ -385,7 +375,7 @@
         </div>
         <div class="CARD-MITRA container pt-4 pb-5">
           <div>
-            <div class="container columns mb-0 is-vcentered">
+            <div class="container columns mb-0 is-vcentered is-mobile">
               <div class="column container pr-1">
                 <div class="PHOTO-PROFILE container">
                   <img
@@ -446,7 +436,7 @@
         </div>
         <div class="CARD-MITRA container pt-4 pb-5">
           <div>
-            <div class="container columns mb-0 is-vcentered">
+            <div class="container columns mb-0 is-vcentered is-mobile">
               <div class="column container pr-1">
                 <div class="PHOTO-PROFILE container">
                   <img
@@ -516,8 +506,8 @@
         <div class="container mx-2">
           <b-carousel-list
             data="data3"
-            v-model="test"
-            :data3="items"
+            :v-model="test"
+            :dataA="items"
             :items-to-show="4"
           >
             <template slot="item" slot-scope="list">
@@ -604,6 +594,45 @@ export default {
       ],
     }
   },
+  data4() {
+    return {
+      activeTab: 0,
+    }
+  },
+  computed: {
+    baseTabs() {
+      return [
+        {
+          id: 'standar',
+          label: 'Standar',
+          content: 'Ini adalah paket Standar',
+          displayed: true,
+          button: 'Rp. 750.000',
+        },
+        {
+          id: 'medium',
+          label: 'Medium',
+          content: 'Ini adalah paket Medium',
+          displayed: true,
+          button: 'Rp. 1.000.000',
+        },
+        {
+          id: 'premium',
+          label: 'Premium',
+          content: 'Ini adalah paket Premium',
+          displayed: true,
+          button: 'Rp. 1.500.000',
+        },
+      ]
+    },
+    tabs() {
+      const tabs = [...this.baseTabs]
+      if (this.showBooks) {
+        tabs.splice(tabs.length - 2, 0, this.bookTab)
+      }
+      return tabs
+    },
+  },
 }
 </script>
 
@@ -638,11 +667,20 @@ li {
 .DOT-STATUS {
   width: 8px;
   height: 8px;
-  background-color: lime;
+  background-color: greenyellow;
   border-radius: 290486px;
   position: absolute;
   bottom: 1px;
   right: 1px;
+}
+.DOT-STATUS-2 {
+  width: 20px;
+  height: 20px;
+  background-color: greenyellow;
+  border-radius: 290486px;
+  position: absolute;
+  bottom: 4.5px;
+  right: 4.5px;
 }
 .INFO {
   display: flex;
@@ -749,6 +787,26 @@ li {
 .pl-1 {
   padding-left: 0rem !important;
 }
-
-/* ------------------------------------ */
+.KOMENTAR {
+  border-style: solid;
+  border-width: thin;
+  border-color: #f79351;
+}
+/* -------------RESPONSIVE--------------- */
+@media screen and (max-width: 1024px) {
+  .INFO {
+    display: block;
+    padding-top: 0rem;
+    padding-left: 1rem !important;
+  }
+  .button.is-medium {
+    font-size: 0.75rem;
+  }
+  .PAKET {
+    padding-left: 0.75rem !important;
+  }
+  .RECOM-IMAGE img {
+    border-radius: 0.5rem;
+  }
+}
 </style>
